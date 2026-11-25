@@ -1,0 +1,38 @@
+{
+  "data": {
+    "archive": "data/out.zip",
+    "cutoff": "2025-11-30",
+    "observation_days": 60,
+    "recent_days": 30,
+    "horizon_days": 30
+  },
+  "preprocessing": {
+    "test_fraction": 0.2,
+    "validation_fraction": 0.2,
+    "random_state": 42
+  },
+  "models": {
+    "logistic_regression": {
+      "class_weight": "balanced",
+      "max_iter": 500
+    },
+    "random_forest": {
+      "n_estimators": 100,
+      "max_depth": 10,
+      "min_samples_split": 10,
+      "min_samples_leaf": 5,
+      "class_weight": "balanced",
+      "n_jobs": 2
+    }
+  },
+  "evaluation": {
+    "threshold": 0.5
+  },
+  "artifacts": {
+    "output": "artifacts/result.zip"
+  },
+  "logging": {
+    "level": "INFO",
+    "format": "%(asctime)s %(levelname)s %(message)s"
+  }
+}
