@@ -1,0 +1,17 @@
+name: telecom-churn
+
+services:
+  pipeline:
+    build: .
+    image: telecom-churn-pipeline:local
+    network_mode: none
+    volumes:
+      - type: bind
+        source: "${DATASET_PATH:-./data/out.zip}"
+        target: /app/data/out.zip
+        read_only: true
+        bind:
+          create_host_path: false
+      - type: bind
+        source: ./artifacts/docker
+        target: /app/artifacts

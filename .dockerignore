@@ -1,0 +1,6 @@
+*
+!Dockerfile
+!requirements.txt
+!config.json
+!churn_data.py
+!pipeline.py
